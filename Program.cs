@@ -7,7 +7,7 @@ namespace PrimNumberProject
         Calculator calculator = new Calculator();
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Calculator.StartProgram();
         }
     }
 }
