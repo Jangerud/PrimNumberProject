@@ -26,7 +26,7 @@ namespace PrimNumberProject
                 if (IsNumberPrime(userChoice) == false)
                 {
 
-                    Console.WriteLine("Please choose another number! Press any key to try again.");
+                    Console.WriteLine("Not a prim number or you didn't type a number! Press any key to try again.");
                     Console.ReadKey();
                 }
                 else
@@ -52,6 +52,8 @@ namespace PrimNumberProject
 
                         case 3:
                             Console.Clear();
+                            primes.Sort();
+                            primes.Reverse();
                             foreach (var i in primes)
                             {
                                 Console.WriteLine(i + ", ");
@@ -69,9 +71,13 @@ namespace PrimNumberProject
             } while (programActive);
         }
 
+
+        //Method that checks if the users number is a prime number.
+        //Author of the method code: https://stackoverflow.com/questions/15743192/check-if-number-is-prime-number .
         public static bool IsNumberPrime(int userNumber)
         {
-            if (userNumber <= 1 || userNumber % 2 == 0)
+            if (userNumber <= 1 || userNumber % 2 == 0) //An if statement that checks if the number is either less than or equal to 1,
+                                                        //or if the return value is 0 from dividing the users number with 2. 
             {
                 return false;
             }
@@ -86,5 +92,20 @@ namespace PrimNumberProject
 
             return true;
         }
+
+
+        /*public static int NextPrime(int userNumber)
+        {
+            for (int i = userNumber; i <= userNumber; i++)
+            {
+                if (userNumber % i != 0)
+                {
+                    return i;
+                }
+            }
+
+            return 0;
+        }
+        */
     }
 }
