@@ -47,6 +47,10 @@ namespace PrimNumberProject
                             break;
 
                         case 2:
+                            int maxValue = primes.Max();
+                            int newPrime = NextPrime(maxValue);
+                            Console.WriteLine($"{newPrime}");
+                            Console.ReadKey();
 
                             break;
 
@@ -94,18 +98,21 @@ namespace PrimNumberProject
         }
 
 
-        /*public static int NextPrime(int userNumber)
+        public static int NextPrime(int userNumber)
         {
-            for (int i = userNumber; i <= userNumber; i++)
+            
+            bool success = false;
+            while (!success)
             {
-                if (userNumber % i != 0)
+                userNumber++;
+                if (IsNumberPrime(userNumber) == true)
                 {
-                    return i;
+                    success = true;
                 }
             }
 
-            return 0;
+            return userNumber;
         }
-        */
+        
     }
 }
